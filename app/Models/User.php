@@ -18,7 +18,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'type',
+        'full_name',
+        'date_of_birth',
+        'username',
         'email',
         'password',
     ];
@@ -41,4 +44,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function feedback(){
+        return $this->hasMany(Feedback::class);
+    }
+
+    public function daily(){
+        return $this->belongsToMany(Daily::class);
+    }
 }
