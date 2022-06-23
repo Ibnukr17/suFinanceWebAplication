@@ -20,7 +20,7 @@ class CreateFeedbackTable extends Migration
             $table->string('subject');
             $table->string('message');
             $table->unsignedBigInteger('account_id');
-            $table->foreign('account_id')->references('id')->on('user');
+            $table->foreign('account_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

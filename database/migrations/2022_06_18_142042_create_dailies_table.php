@@ -24,7 +24,7 @@ class CreateDailiesTable extends Migration
             $table->unsignedBigInteger('saving_id');
             $table->foreign('saving_id')->references('id')->on('savings');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
